@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #edeeed;
+}
+
+.gouttes {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotation 15s;
+}
+
+.goutte {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 55% 45% 33% 67% / 43% 44% 56% 57%;
+
+    box-shadow:       /* Pour la couleur noire*/
+          inset 10px 10px 10px 10px rgba(0,0,0,0.05),
+                      15px 25px 10px rgba(0,0,0,0.1),
+                      15px 20px 20px rgba(0,0,0,0.05),
+                      
+                      /*Pour la couleur blanche*/
+                      inset -10px -10px 15px rgba(255,255,255,0.9) ;
+}
+
+.goutte::after{
+    content:'';
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 40% 60% 61% 39% / 50% 44% 56% 50%;
+}
+
+.goutte:nth-child(2) {
+    transform: scale(0.5) translate(-222px,10px);
+    border-radius: 45% 55% 46% 54% / 50% 49% 51% 50%;
+}
+
+.goutte:nth-child(3) {
+    transform: scale(0.5) translate(280px,110px);
+    border-radius: 45% 55% 46% 54% / 50% 49% 51% 50%;
+}
+
+.goutte:nth-child(4) {
+    transform: scale(0.5) translate(120px,-350px);
+    border-radius: 47% 53% 27% 73% / 35% 43% 57% 65% ;
+}
+
+/*Aninamtion*/
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+
+
